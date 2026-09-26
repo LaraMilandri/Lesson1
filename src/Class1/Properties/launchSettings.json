@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Class1": {
+      "commandName": "Project"
+    },
+    "Profilo 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\lara.milandri\\source\\repos\\Lesson1\\src\\BlaisePascal.Lesson1.Console\\Program.cs"
+    }
+  }
+}
