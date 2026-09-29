@@ -21,10 +21,10 @@
         
 
         int costoTotale = costoSpedizioneSingoloPacco * numeroPacchiComprati; 
-        Console.WriteLine($"il tipo di consegna selezionato è: { tipoConsegna} e il vosto totakle è {costoTotale}");
+        Console.WriteLine($"il tipo di consegna selezionato è: { tipoConsegna} e il vosto totale è {costoTotale}");
 
-
-
+        // [tipo ] [nomeOggetti] = new[tipo](); //creo un oggetto della classe [tipo]
+        Enemy newEnemy = new Enemy(); //creo un oggetto della classe Enemy
 
     }
 }
