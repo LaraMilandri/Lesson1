@@ -1,9 +1,13 @@
-﻿public class Program //Questa è una classe
+﻿using Class1;
+using BlaisePascal.Lesson1.ClassVehicle;
+
+public class Program //Questa è una classe
 {
     //Metodo di entrata per esecuzione del codice
     public static void Main()
     {
 
+        /*
         Console.WriteLine("Inserisci il nome del cliente:");
         string nomeCliente = Console.ReadLine();
 
@@ -25,6 +29,14 @@
 
         // [tipo ] [nomeOggetti] = new[tipo](); //creo un oggetto della classe [tipo]
         Enemy newEnemy = new Enemy(); //creo un oggetto della classe Enemy
+        */
 
+
+        Vehicle vehicle = new Vehicle("AB123CD");
+        //vehicle.LicensePlate = "AB123CD";
+        string license = vehicle.LicensePlate;
+
+        
+        Console.WriteLine(license);
     }
 }
