@@ -25,18 +25,24 @@ public class Program //Questa è una classe
         
 
         int costoTotale = costoSpedizioneSingoloPacco * numeroPacchiComprati; 
-        Console.WriteLine($"il tipo di consegna selezionato è: { tipoConsegna} e il vosto totale è {costoTotale}");
+        Console.WriteLine($"il tipo di consegna selezionato è: { tipoConsegna} e il vosto totale è {costoTotale}");*/
 
         // [tipo ] [nomeOggetti] = new[tipo](); //creo un oggetto della classe [tipo]
-        Enemy newEnemy = new Enemy(); //creo un oggetto della classe Enemy
-        */
+        Enemy enemy = new Enemy(); //creo un oggetto della classe Enemy
+        
+        enemy.Health = 80; //assegno un valore alla proprietà Health dell'oggetto Enemy
+        Console.WriteLine("Enemy Health: " + enemy.Health);
 
 
+
+
+
+        /*
         Vehicle vehicle = new Vehicle("AB123CD");
         //vehicle.LicensePlate = "AB123CD";
         string license = vehicle.LicensePlate;
 
         
-        Console.WriteLine(license);
+        Console.WriteLine(license);*/
     }
 }
