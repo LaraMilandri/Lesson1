@@ -15,25 +15,72 @@
             { if (value < 0) throw new ArgumentException("illegal value");
                         _odometerKm = value ; } }
 
-        public double DailyRate { get; private set; }
+        //public double DailyRate { get; private set; }
+        public double DailyRate
+        {
+            get
+            { return _dailyRate; }
+            private set
+            {
+                if (value < 0)
+                    throw new ArgumentException($"value not allowed {nameof(DailyRate)}: {value} ");
+                _dailyRate = value;
+            }
+        }
 
-        public double FuelLevelPercentage { get; private set; }
+        public double FuelLevelPercentage
+        {
+            get
+            { return _fuelLevelPercentage; }
+            private set
+            {
+                if (value < 0 || value > 100)
+                    throw new ArgumentException($"value not allowed {nameof(FuelLevelPercentage)}: {value} ");
+
+                _fuelLevelPercentage = value;
+            }
+        }
+
 
         /// <summary>
-        /// metodo costruttore
+        /// metodo costruttore che inizializza la targa del veicolo
         /// </summary>
-        /// <param name="licensePLate"></param>
-
-        public Vehicle(string licensePLate)
+        /// <param name="licensePlate"></param>
+        public Vehicle(string licensePlate)
         {
-            LicensePlate = licensePLate; //chiamata al private set
-
+            //TODO: validazione della targa
+            LicensePlate = licensePlate; //chiama al set           
         }
-        
-        public Vehicle(string licensePlate, int odometerKm, double dailyRate, double fuelLevelPercentage)
+
+        /// <summary>
+        /// metodo costruttore che inizializza la targa del veicolo, il contachilometri, il prezzo giornaliero e il livello di carburante
+        /// </summary>
+        /// <param name="licensePlate"></param>
+        /// <param name="odometerKm"></param>
+        /// <param name="dailyRate"></param>
+        /// <param name="fuelLevelPercentage"></param>
+        public Vehicle(string licensePlate, int odometerKm,
+            double dailyRate, double fuelLevelPercentage)
         {
-
+            LicensePlate = licensePlate;
+            OdometerKm = odometerKm; //chiamata al set
+            DailyRate = dailyRate;
+            FuelLevelPercentage = fuelLevelPercentage;
         }
+
+        public void RegisterData(int consumedKm, double consumedFuel)
+        {
+            //controlli sui parametri (argument)
+            if (consumedKm <= 0)
+                throw new ArgumentException($"value not allowed {nameof(consumedKm)}: {consumedKm} ");
+            if (consumedFuel < 0)
+                throw new ArgumentException($"value not allowed {nameof(consumedFuel)}: {consumedFuel} ");
+
+            //aggiorno lo stato dell'oggetto
+            OdometerKm += consumedKm; //chiamata al set
+            FuelLevelPercentage -= consumedFuel; //chiamata set
+        }
+
 
     }
 }
